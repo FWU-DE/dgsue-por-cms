@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "kb_artikels",
+  "info": {
+    "singularName": "kb-artikel",
+    "pluralName": "kb-artikels",
+    "displayName": "KB Artikel"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "componente": {
+      "type": "enumeration",
+      "enum": [
+        "Benutzerverwaltung",
+        "Zielvereinbarungen"
+      ]
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "inversedBy": "kb_artikels"
+    },
+    "zammadAnswerId": {
+      "type": "biginteger"
+    },
+    "zammadTranslationId": {
+      "type": "biginteger"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "kb_artikels"
+    },
+    "anwendungen": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::anwendungen.anwendungen",
+      "inversedBy": "kb_artikels"
+    },
+    "rollens": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::rollen.rollen",
+      "mappedBy": "kb_artikels"
+    }
+  }
+}

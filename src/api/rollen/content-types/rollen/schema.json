@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rollens",
+  "info": {
+    "singularName": "rollen",
+    "pluralName": "rollens",
+    "displayName": "Rollen"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "bildungsrolle": {
+      "type": "boolean",
+      "default": false
+    },
+    "beschreibung": {
+      "type": "text"
+    },
+    "technische_bezeichnung": {
+      "type": "string"
+    },
+    "reihenfolge": {
+      "type": "integer"
+    },
+    "anwendungskontexte": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::anwendungskontext.anwendungskontext",
+      "mappedBy": "rollen"
+    },
+    "prozessschritte": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::prozessschritt.prozessschritt",
+      "mappedBy": "rollen"
+    },
+    "kb_artikels": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::kb-artikel.kb-artikel",
+      "inversedBy": "rollens"
+    }
+  }
+}

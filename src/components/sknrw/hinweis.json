@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_sknrw_hinweis",
+  "info": {
+    "displayName": "Hinweis"
+  },
+  "options": {},
+  "attributes": {
+    "titel": {
+      "type": "string",
+      "required": true
+    },
+    "text": {
+      "type": "text",
+      "required": true
+    },
+    "schaltflaeche": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "how_to_artikels",
+  "info": {
+    "singularName": "how-to-artikel",
+    "pluralName": "how-to-artikels",
+    "displayName": "HLP_Anleitung"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Fragestellung": {
+      "type": "string",
+      "required": true
+    },
+    "Kurzantwort": {
+      "type": "blocks"
+    },
+    "next_articles": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::how-to-artikel.how-to-artikel",
+      "inversedBy": "prior_articles"
+    },
+    "prior_articles": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::how-to-artikel.how-to-artikel",
+      "mappedBy": "next_articles"
+    },
+    "prozesse": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::prozess.prozess",
+      "inversedBy": "how_to_article"
+    }
+  }
+}

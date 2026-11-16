@@ -1,0 +1,92 @@
+name: image
+
+# Builds the Strapi project image from this repository and publishes it to GHCR.
+# The Helm chart consumes the resulting sha-XXXXXXX tag (see fwu-strapi-cms/README.md in FWU-DE/dgsue-por-infrastruktur).
+#
+# Two variants per commit, because NODE_ENV is compiled into the admin panel and a
+# runtime override cannot change it:
+#   * production  -> sha-XXXXXXX, <branch>, latest          (test, prod)
+#   * development -> sha-XXXXXXX-dev, <branch>-dev, latest-dev
+#     Content-Type Builder compiled in; only for dev's `runMode: develop` trial.
+#     Never promote a -dev tag.
+
+on:
+  push:
+    paths-ignore:
+      - "**/*.md"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  packages: write
+
+concurrency:
+  group: fwu-strapi-cms-image-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      # A broken dev variant must not cancel the production build, and vice versa.
+      fail-fast: false
+      matrix:
+        include:
+          - variant: production
+            node_env: production
+            suffix: ""
+          - variant: development
+            node_env: development
+            suffix: "-dev"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: docker/setup-buildx-action@v3
+
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          # No PAT needed: the job token can push to this org's packages thanks to
+          # `permissions.packages: write` above.
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ghcr.io/fwu-de/dgsue-por-cms
+          tags: |
+            type=sha,prefix=sha-,format=short
+            type=ref,event=branch
+            type=raw,value=latest,enable={{is_default_branch}}
+          # Applied to every tag above, e.g. sha-abc1234-dev / latest-dev.
+          flavor: |
+            suffix=${{ matrix.suffix }}
+
+      - uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          # Left EMPTY on purpose: with no backend URL compiled in, the admin panel
+          # calls the same origin it is served from, so one image works on every
+          # stage and can be promoted unchanged. Set the repository variable
+          # STRAPI_ADMIN_BACKEND_URL only if the panel ever has to talk to a
+          # different origin than it is served from — that makes the image
+          # stage-specific.
+          build-args: |
+            STRAPI_ADMIN_BACKEND_URL=${{ vars.STRAPI_ADMIN_BACKEND_URL }}
+            NODE_ENV=${{ matrix.node_env }}
+          # Separate cache per variant: the layers diverge at `npm run build`, and a
+          # shared scope would let each variant evict the other's cache.
+          cache-from: type=gha,scope=fwu-strapi-cms-${{ matrix.variant }}
+          cache-to: type=gha,mode=max,scope=fwu-strapi-cms-${{ matrix.variant }}
+
+      - name: Summary
+        run: |
+          echo "### Published tags (${{ matrix.variant }})" >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          echo "${{ steps.meta.outputs.tags }}" >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          echo "Set the sha- tag in the stage overlay or as an ArgoCD parameter." >> "$GITHUB_STEP_SUMMARY"

@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "prozesses",
+  "info": {
+    "singularName": "prozess",
+    "pluralName": "prozesses",
+    "displayName": "HLP_Prozess"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titel": {
+      "type": "string"
+    },
+    "einleitung": {
+      "type": "blocks"
+    },
+    "prozessschritte": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::prozessschritt.prozessschritt",
+      "inversedBy": "prozesse"
+    },
+    "how_to_article": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::how-to-artikel.how-to-artikel",
+      "mappedBy": "prozesse"
+    },
+    "prior": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::prozess.prozess",
+      "inversedBy": "next"
+    },
+    "next": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::prozess.prozess",
+      "mappedBy": "prior"
+    },
+    "abschluss": {
+      "type": "blocks"
+    }
+  }
+}

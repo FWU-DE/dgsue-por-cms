@@ -1,0 +1,33 @@
+{
+  "name": "fwu-strapi-cms",
+  "private": true,
+  "version": "0.1.0",
+  "description": "FWU Strapi CMS — content source for the IQB Testcenter",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "strapi build",
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "strapi": "strapi"
+  },
+  "dependencies": {
+    "@strapi/plugin-users-permissions": "5.59.0",
+    "@strapi/provider-upload-aws-s3": "5.59.0",
+    "@strapi/strapi": "5.59.0",
+    "pg": "8.23.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.30.3",
+    "styled-components": "^6.1.13"
+  },
+  "overrides": {
+    "@strapi/admin": "5.59.0"
+  },
+  "engines": {
+    "node": ">=20.0.0 <=26.x.x",
+    "npm": ">=6.0.0"
+  },
+  "strapi": {
+    "uuid": "fwu-strapi-cms"
+  }
+}

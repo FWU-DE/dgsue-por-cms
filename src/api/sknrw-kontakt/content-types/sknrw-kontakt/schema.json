@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sknrw_kontakte",
+  "info": {
+    "singularName": "sknrw-kontakt",
+    "pluralName": "sknrw-kontakte",
+    "displayName": "SKNRW_Kontakte"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "uid": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    },
+    "email": {
+      "type": "email"
+    },
+    "telefon": {
+      "type": "string"
+    },
+    "servicezeiten": {
+      "type": "string"
+    },
+    "hinweis": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "nrw_logos",
+  "info": {
+    "singularName": "nrw-logo",
+    "pluralName": "nrw-logos",
+    "displayName": "SKNRW_Logo_NRW"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "NRW_Logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

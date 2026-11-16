@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "prozessschritts",
+  "info": {
+    "singularName": "prozessschritt",
+    "pluralName": "prozessschritts",
+    "displayName": "HLP_Prozessschritt"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titel": {
+      "type": "string"
+    },
+    "beschreibung": {
+      "type": "blocks"
+    },
+    "screenshot": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "prozesse": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::prozess.prozess",
+      "mappedBy": "prozessschritte"
+    },
+    "rollen": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::rollen.rollen",
+      "inversedBy": "prozessschritte"
+    }
+  }
+}

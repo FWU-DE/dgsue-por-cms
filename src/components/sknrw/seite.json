@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_sknrw_seites",
+  "info": {
+    "displayName": "Seite"
+  },
+  "options": {},
+  "attributes": {
+    "titel_tab": {
+      "type": "string"
+    },
+    "titel_seite": {
+      "type": "string"
+    },
+    "text_einleitung": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

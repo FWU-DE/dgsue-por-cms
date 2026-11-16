@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "schulkompass_logos",
+  "info": {
+    "singularName": "schulkompass-logo",
+    "pluralName": "schulkompass-logos",
+    "displayName": "SKNRW_Logo_Schulkompass"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Schulkompass_Logo": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

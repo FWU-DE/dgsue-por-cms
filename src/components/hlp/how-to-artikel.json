@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_hlp_how_to_artikels",
+  "info": {
+    "displayName": "Anleitung",
+    "icon": "lightbulb"
+  },
+  "options": {},
+  "attributes": {
+    "hlp_how_to_artikel": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::how-to-artikel.how-to-artikel"
+    }
+  },
+  "config": {}
+}

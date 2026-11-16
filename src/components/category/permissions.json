@@ -1,0 +1,61 @@
+{
+  "collectionName": "components_category_permissions",
+  "info": {
+    "displayName": "Permissions",
+    "icon": "key"
+  },
+  "options": {},
+  "attributes": {
+    "Admin": {
+      "type": "enumeration",
+      "required": true,
+      "default": "Editor",
+      "enum": [
+        "Editor",
+        "Reader",
+        "None"
+      ]
+    },
+    "Agenten": {
+      "type": "enumeration",
+      "required": true,
+      "default": "Reader",
+      "enum": [
+        "Editor",
+        "Reader",
+        "None"
+      ]
+    },
+    "Supervisor": {
+      "type": "enumeration",
+      "required": true,
+      "default": "Reader",
+      "enum": [
+        "Editor",
+        "Reader",
+        "None"
+      ]
+    },
+    "ZammadConfig": {
+      "type": "enumeration",
+      "required": true,
+      "default": "Editor",
+      "enum": [
+        "Editor",
+        "Reader",
+        "None"
+      ]
+    },
+    "ZammadUserMgmt": {
+      "type": "enumeration",
+      "required": true,
+      "default": "Editor",
+      "enum": [
+        "Editor",
+        "Reader",
+        "None"
+      ]
+    }
+  },
+  "config": {}
+}

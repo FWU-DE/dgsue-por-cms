@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "hlp_startseites",
+  "info": {
+    "singularName": "hlp-startseite",
+    "pluralName": "hlp-startseites",
+    "displayName": "HLP_Startseite"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titel": {
+      "type": "string"
+    },
+    "suche_platzhalter": {
+      "type": "string"
+    },
+    "liste_auswahl": {
+      "type": "dynamiczone",
+      "components": [
+        "hlp.how-to-artikel",
+        "hlp.faq"
+      ]
+    },
+    "liste_anzahl": {
+      "type": "integer"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_sknrw_felds",
+  "info": {
+    "displayName": "Feld"
+  },
+  "options": {},
+  "attributes": {
+    "bezeichnung": {
+      "type": "string",
+      "required": true
+    },
+    "platzhalter": {
+      "type": "string",
+      "required": true
+    },
+    "hinweis": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}
