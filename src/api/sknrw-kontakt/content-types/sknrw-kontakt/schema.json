@@ -26,11 +26,17 @@
     "telefon": {
       "type": "string"
     },
-    "servicezeiten": {
+    "verfuegbarkeit": {
       "type": "string"
     },
     "hinweis": {
       "type": "text"
+    },
+    "anwendung": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sknrw-anwendung.sknrw-anwendung",
+      "mappedBy": "support"
     }
   }
 }

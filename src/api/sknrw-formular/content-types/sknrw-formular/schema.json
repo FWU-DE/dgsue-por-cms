@@ -1,0 +1,40 @@
+{
+  "kind": "singleType",
+  "collectionName": "sknrw_formulare",
+  "info": {
+    "singularName": "sknrw-formular",
+    "pluralName": "sknrw-formulare",
+    "displayName": "SKNRW_Formular"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "pflichtfeld": {
+      "type": "component",
+      "component": "sknrw.hinweis",
+      "repeatable": false
+    },
+    "fehler_pflichtfeld": {
+      "type": "component",
+      "component": "sknrw.hinweis",
+      "repeatable": false
+    },
+    "fehler_absenden": {
+      "type": "component",
+      "component": "sknrw.hinweis",
+      "repeatable": false
+    },
+    "langes_laden": {
+      "type": "component",
+      "component": "sknrw.hinweis",
+      "repeatable": false
+    },
+    "daten_versendet": {
+      "type": "component",
+      "component": "sknrw.hinweis",
+      "repeatable": false
+    }
+  }
+}

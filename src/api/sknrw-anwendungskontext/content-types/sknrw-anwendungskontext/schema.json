@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sknrw_anwendungskontexte",
+  "info": {
+    "singularName": "sknrw-anwendungskontext",
+    "pluralName": "sknrw-anwendungskontexte",
+    "displayName": "SKNRW_Anwendungskontexte"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "beschreibung": {
+      "type": "text"
+    },
+    "reihenfolge": {
+      "type": "integer"
+    },
+    "anwendung": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::sknrw-anwendung.sknrw-anwendung",
+      "inversedBy": "anwendungskontexte"
+    },
+    "rollen": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::sknrw-rolle.sknrw-rolle",
+      "inversedBy": "anwendungskontexte"
+    }
+  }
+}

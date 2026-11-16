@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_sknrw_buttons",
+  "info": {
+    "displayName": "Buttons"
+  },
+  "options": {},
+  "attributes": {
+    "bezeichnung": {
+      "type": "string",
+      "required": true
+    },
+    "icon": {
+      "type": "string"
+    },
+    "tooltip": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

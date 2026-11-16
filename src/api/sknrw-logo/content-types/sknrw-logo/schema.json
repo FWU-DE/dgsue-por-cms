@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sknrw_logos",
+  "info": {
+    "singularName": "sknrw-logo",
+    "pluralName": "sknrw-logos",
+    "displayName": "SKNRW_Logos"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "alternativtext": {
+      "type": "string",
+      "required": true
+    },
+    "uid": {
+      "type": "uid",
+      "required": true
+    },
+    "bild": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "anwendung": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sknrw-anwendung.sknrw-anwendung",
+      "mappedBy": "logo"
+    }
+  }
+}

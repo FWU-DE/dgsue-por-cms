@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_sknrw_wizards",
+  "info": {
+    "displayName": "Wizards"
+  },
+  "options": {},
+  "attributes": {
+    "titel": {
+      "type": "string"
+    },
+    "beschreibung": {
+      "type": "text"
+    },
+    "schritte": {
+      "type": "component",
+      "component": "sknrw.wizard-schritt",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

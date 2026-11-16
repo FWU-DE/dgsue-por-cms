@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sknrw_anwendungen",
+  "info": {
+    "singularName": "sknrw-anwendung",
+    "pluralName": "sknrw-anwendungen",
+    "displayName": "SKNRW_Anwendungen"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "akronym": {
+      "type": "string"
+    },
+    "beschreibung": {
+      "type": "text"
+    },
+    "reihenfolge": {
+      "type": "integer"
+    },
+    "support": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sknrw-kontakt.sknrw-kontakt",
+      "inversedBy": "anwendung"
+    },
+    "anwendungskontexte": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sknrw-anwendungskontext.sknrw-anwendungskontext",
+      "mappedBy": "anwendung"
+    },
+    "logo": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sknrw-logo.sknrw-logo",
+      "inversedBy": "anwendung"
+    }
+  }
+}

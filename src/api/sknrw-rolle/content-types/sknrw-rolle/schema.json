@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sknrw_rollen",
+  "info": {
+    "singularName": "sknrw-rolle",
+    "pluralName": "sknrw-rollen",
+    "displayName": "SKNRW_Rollen"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "beschreibung": {
+      "type": "text"
+    },
+    "bildungsrolle": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "benutzerverwaltung": {
+      "type": "boolean",
+      "default": false
+    },
+    "reihenfolge": {
+      "type": "integer"
+    },
+    "technische_bezeichnung": {
+      "type": "string"
+    },
+    "anwendungskontexte": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::sknrw-anwendungskontext.sknrw-anwendungskontext",
+      "mappedBy": "rollen"
+    }
+  }
+}

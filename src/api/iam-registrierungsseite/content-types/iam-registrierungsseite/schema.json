@@ -16,89 +16,20 @@
       "component": "sknrw.seite",
       "repeatable": false
     },
-    "hinweis_pflichtfeld": {
-      "type": "string"
-    },
-    "feld_email": {
+    "wizard": {
       "type": "component",
-      "component": "sknrw.feld",
+      "component": "sknrw.wizard",
       "repeatable": false
     },
-    "fehler_email_format": {
-      "type": "string"
-    },
-    "fehler_email_vergeben": {
-      "type": "string"
-    },
-    "feld_benutzername": {
+    "link_anmelden": {
       "type": "component",
-      "component": "sknrw.feld",
-      "repeatable": false
-    },
-    "fehler_benutzername_vergeben": {
-      "type": "string"
-    },
-    "link_zur_anmeldung": {
-      "type": "string"
-    },
-    "feld_rolle": {
-      "type": "component",
-      "component": "sknrw.feld",
-      "repeatable": false
-    },
-    "feld_schule": {
-      "type": "component",
-      "component": "sknrw.feld",
-      "repeatable": false
-    },
-    "feld_behoerde": {
-      "type": "component",
-      "component": "sknrw.feld",
-      "repeatable": false
-    },
-    "feld_schulform": {
-      "type": "component",
-      "component": "sknrw.feld",
-      "repeatable": false
-    },
-    "fehler_schulform": {
-      "type": "string"
+      "component": "sknrw.links",
+      "repeatable": true
     },
     "schaltflaeche_weitere_rolle": {
       "type": "string"
     },
-    "feld_anrede": {
-      "type": "component",
-      "component": "sknrw.feld",
-      "repeatable": false
-    },
-    "feld_vorname": {
-      "type": "component",
-      "component": "sknrw.feld",
-      "repeatable": false
-    },
-    "feld_nachname": {
-      "type": "component",
-      "component": "sknrw.feld",
-      "repeatable": false
-    },
-    "hinweis_keine_email": {
-      "type": "component",
-      "component": "sknrw.hinweis",
-      "repeatable": false
-    },
-    "hinweis_dienststelle": {
-      "type": "component",
-      "component": "sknrw.hinweis",
-      "repeatable": false
-    },
-    "fehler_pflichtfeld": {
-      "type": "string"
-    },
     "schaltflaeche_registrieren": {
-      "type": "string"
-    },
-    "link_bereits_registriert": {
       "type": "string"
     },
     "bestaetigung_mit_email": {
@@ -106,7 +37,7 @@
       "component": "sknrw.hinweis",
       "repeatable": false
     },
-    "bestaetigung_ohne_email": {
+    "daten_versendet": {
       "type": "component",
       "component": "sknrw.hinweis",
       "repeatable": false

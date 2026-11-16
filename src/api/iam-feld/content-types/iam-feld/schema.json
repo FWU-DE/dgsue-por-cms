@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "iam_felder",
+  "info": {
+    "singularName": "iam-feld",
+    "pluralName": "iam-felder",
+    "displayName": "IAM_Felder"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "feld": {
+      "type": "component",
+      "component": "sknrw.feld",
+      "repeatable": false
+    }
+  }
+}

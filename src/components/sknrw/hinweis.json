@@ -1,7 +1,7 @@
 {
   "collectionName": "components_sknrw_hinweis",
   "info": {
-    "displayName": "Hinweis"
+    "displayName": "Meldungen"
   },
   "options": {},
   "attributes": {
@@ -10,11 +10,27 @@
       "required": true
     },
     "text": {
-      "type": "text",
+      "type": "blocks",
       "required": true
     },
-    "schaltflaeche": {
-      "type": "string"
+    "art": {
+      "type": "enumeration",
+      "enum": [
+        "Fehler",
+        "Warnung",
+        "Information",
+        "Erfolg"
+      ]
+    },
+    "link": {
+      "type": "component",
+      "component": "sknrw.links",
+      "repeatable": false
+    },
+    "button": {
+      "type": "component",
+      "component": "sknrw.buttons",
+      "repeatable": false
     }
   },
   "config": {}
