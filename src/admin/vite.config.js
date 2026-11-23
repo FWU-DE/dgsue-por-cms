@@ -11,9 +11,10 @@ const { mergeConfig } = require('vite');
 module.exports = (config) => {
   return mergeConfig(config, {
     server: {
-      // Leading dot matches any subdomain, so this doesn't need updating if
+      // Leading dot matches any subdomain: the current host and the planned
+      // inhalte-*.intern.schulkompass.nrw hosts. No update needed if
       // another stage under the same DNS zone runs this trial later.
-      allowedHosts: ['.iac.runs.onstackit.cloud'],
+      allowedHosts: ['.iac.runs.onstackit.cloud', '.intern.schulkompass.nrw'],
     },
   });
 };
