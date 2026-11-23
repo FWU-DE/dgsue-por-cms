@@ -19,10 +19,7 @@
     },
     "liste_auswahl": {
       "type": "dynamiczone",
-      "components": [
-        "hlp.how-to-artikel",
-        "hlp.faq"
-      ]
+      "components": []
     },
     "liste_anzahl": {
       "type": "integer"
