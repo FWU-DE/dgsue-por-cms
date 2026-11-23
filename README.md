@@ -1,7 +1,8 @@
-# fwu-strapi-cms — application
+# dgsue-por-cms
 
-The Strapi 5 project that becomes `ghcr.io/fwu-de/dgsue-por-cms`. The Helm
-chart that deploys it lives in [fwu-strapi-cms/helm-chart in dgsue-por-infrastruktur](https://github.com/FWU-DE/dgsue-por-infrastruktur/tree/main/fwu-strapi-cms/helm-chart).
+The Strapi 5 project that is built into the container image
+`ghcr.io/fwu-de/dgsue-por-cms`. The deployment (Helm chart, configuration per
+stage) is maintained separately.
 
 Why this exists: there is no public Strapi runtime image that can boot on its own.
 `strapi/strapi` and `strapi/base` are gone from Docker Hub, and the community
@@ -20,10 +21,10 @@ has to be a project image.
 | `config/plugins.js` | upload provider: `aws-s3` (presigned URLs) or `local` |
 | `config/middlewares.js` | default stack + CSP that allows the S3 host for media |
 | `src/index.js` | `register`/`bootstrap` hooks (empty) |
-| `src/api/` | content types — **currently empty, nothing is modelled yet** |
+| `src/api/` | content types (one `schema.json` per type) |
 
-Every variable read here is supplied by the chart's ConfigMap and Secrets; see the
-"Image contract" section of [../README.md](../README.md).
+Every variable read here is supplied at runtime by the deployment (ConfigMap and
+Secrets); `.env.example` lists them for local development.
 
 ## Local development
 
@@ -70,7 +71,6 @@ Notes:
 
 ## Status
 
-Written but **never built or run** — there was no Docker or npm available in the
-environment where this was scaffolded. Expect the first CI run to be the real test:
-the dependency versions (Strapi 5.59.0 and its React peers) are pinned from
-published release data, not from a resolved lockfile.
+Built by CI (image `ghcr.io/fwu-de/dgsue-por-cms`). The content types match the DEV instance (last
+checked 2026-11-23). Dependency versions (Strapi 5.59.0 and its React peers) are
+pinned in `package.json`; there is no lockfile yet.

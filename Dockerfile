@@ -5,7 +5,7 @@
 #
 # The admin panel is compiled at BUILD time and STRAPI_ADMIN_BACKEND_URL is baked
 # into that bundle, so the URL has to be passed per environment:
-#   docker build --build-arg STRAPI_ADMIN_BACKEND_URL=https://cms.iac.runs.onstackit.cloud .
+#   docker build --build-arg STRAPI_ADMIN_BACKEND_URL=https://cms.example.org .
 # The Helm chart also passes it at runtime, which only matters for code paths that
 # read it dynamically.
 #

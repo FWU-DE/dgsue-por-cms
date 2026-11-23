@@ -1,7 +1,7 @@
 name: image
 
 # Builds the Strapi project image from this repository and publishes it to GHCR.
-# The Helm chart consumes the resulting sha-XXXXXXX tag (see fwu-strapi-cms/README.md in FWU-DE/dgsue-por-infrastruktur).
+# Deployments reference the resulting sha-XXXXXXX tag.
 #
 # Two variants per commit, because NODE_ENV is compiled into the admin panel and a
 # runtime override cannot change it:

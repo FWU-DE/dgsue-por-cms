@@ -5,7 +5,7 @@
 // rejects any request whose Host header isn't on its allowlist (a
 // DNS-rebinding protection), which is why the deployed hostname needs adding
 // here explicitly. Delete this file together with the rest of the
-// Content-Type Builder trial (see fwu-strapi-cms/helm-chart/values.dev.yaml in FWU-DE/dgsue-por-infrastruktur).
+// Content-Type Builder trial on DEV.
 const { mergeConfig } = require('vite');
 
 module.exports = (config) => {
