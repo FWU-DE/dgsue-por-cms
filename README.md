@@ -73,4 +73,5 @@ Notes:
 
 Built by CI (image `ghcr.io/fwu-de/dgsue-por-cms`). The content types match the DEV instance (last
 checked 2026-11-23). Dependency versions (Strapi 5.59.0 and its React peers) are
-pinned in `package.json`; there is no lockfile yet.
+pinned in `package.json` and resolved in `package-lock.json` (the image build uses
+`npm ci`).
