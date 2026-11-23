@@ -32,12 +32,6 @@
       "relation": "manyToMany",
       "target": "api::prozess.prozess",
       "mappedBy": "prozessschritte"
-    },
-    "rollen": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::rollen.rollen",
-      "inversedBy": "prozessschritte"
     }
   }
 }

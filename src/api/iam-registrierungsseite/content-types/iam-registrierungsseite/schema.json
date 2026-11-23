@@ -29,6 +29,11 @@
     "schaltflaeche_weitere_rolle": {
       "type": "string"
     },
+    "bestaetigung_ohne_email": {
+      "type": "component",
+      "component": "sknrw.hinweis",
+      "repeatable": false
+    },
     "schaltflaeche_registrieren": {
       "type": "string"
     },
